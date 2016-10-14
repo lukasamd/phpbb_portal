@@ -1,0 +1,42 @@
+
+<table width="700" align="center" class="tabelka" bgcolor="#EEE">
+  <tr>
+    <td align="center" colspan="2">
+      <img src="http://forum.safegroup.pl/images/logo.png" alt="Pobierz grafikę, aby zobaczyć całą treść wiadomości">
+      <br />
+      <hr />
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+      <h1 size="16px">{SUBJECT}</h1>
+    </td>
+    <td align="right">
+      <span size="14px" class="data">{DATE}</span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" color="#555">
+      <br>
+      {CONTENT}       
+    </td>
+  </tr>
+  <tr>
+    <td align="left" colspan="2">
+      <br><hr style="color: #111111;border: 0;border-top: 1px;border-color: #000000;border-style: dotted;">
+    </td>
+  </tr>
+  <tr>
+    <td align="left" colspan="2">
+      Pozdrawiamy,<br>
+      Redakcja SafeGroup.pl - Centrum bezpieczeństwa<br>
+      <a href="http://forum.safegroup.pl/">http://forum.safegroup.pl/</a>
+      
+      <br><br>
+      <font size="1">
+      Wiadomość została wysłana zgodnie z regulaminem i polityką prywatności serwisu SafeGroup.pl.
+      <br>Jeżeli nie chcesz otrzymywać emaili, wyłącz otrzymywanie wiadomości od administratorów w ustawieniach Twojego konta.
+      </font>
+    </td>
+  </tr>
+</table> 

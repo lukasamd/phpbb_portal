@@ -1,0 +1,105 @@
+<div class="panel">
+  <div class="panelTop">
+		Wyszukiwarka serwisu
+	</div>
+  <div class="panelMain">
+	  <form id="formSearch" action="{FORM_ACTION}" method="post">
+	    <fieldset>
+	      <input type="text" value="{KEYWORD}" name="q" class="textbox" style="width:300px;font-size:12px;" />
+	      <input type="submit" value="Szukaj w serwisie" class="button" />
+	      <br />
+	      Sortowanie:
+	      <input type="radio" name="sortBy" value="time"<!-- IF SORT_BY_TIME --> checked="checked"<!-- ENDIF --> /> data
+	      <input type="radio" name="sortBy" value="title"<!-- IF SORT_BY_TITLE --> checked="checked"<!-- ENDIF --> /> nazwa
+	      <input type="checkbox" name="searchInContent" <!-- IF SEARCH_IN_CONTENT --> checked="checked"<!-- ENDIF --> />
+	      szukanie w opisach
+	      <!-- IF IS_LUKASAMD -->
+          <table>
+	        <tr>
+                
+	        	<!-- BEGIN option -->
+	          <td>
+	            <input type="checkbox" name="searchOptions[{option.NAME}]"<!-- IF option.CHECKED --> checked="checked"<!-- ENDIF --> />
+	            {option.TITLE}
+	          </td>
+	          <!-- END option -->
+              
+	        </tr>
+	        <tr>
+	          <td></td>
+	          <td></td>
+	        </tr>
+	      </table>
+          <!-- ENDIF -->
+	    </fieldset>
+	  </form>
+	  <br />
+		<!-- IF ERROR_LENGTH -->
+			<h4 class="komunikat-bad center">
+			  Podana fraza jest zbyt krótka!
+			</h4>
+		<!-- ENDIF -->
+  </div>
+  <div class="panelBottom"></div>
+</div>
+        
+        
+<!-- IF NUM_RESULTS > 0 -->
+    <div class="panel">
+        <div class="panelTop">
+            Wyniki wyszukiwania
+        </div>
+        <div class="panelMain">{PAGINATION}</div>
+        <div class="panelBottom"></div>
+    </div>
+    
+    
+    <!-- BEGIN content -->
+    <div class="panel">
+        <header class="panelTop newsListHeader">
+      
+            <div class="contentTop">                
+                <h2 class="title newsListTitle"><a href="{content.URL}" title="{content.TITLE}">{content.TITLE}</a></h2>
+            </div>
+            
+            <div class="contentMeta">
+                <div class="contentMetaComments">
+                    <a href="{content.URL}#listComments" title="Skomentuj: {content.TITLE}">Komentarze ({content.COMMENTS})</a>
+                </div>
+            
+                <div class="contentMetaAuthor">
+                    <time datetime="{content.DATETIME}" pubdate>{content.TIME}</time>,
+                    Autor: {content.AUTHOR}
+                    <br />
+                    Kategorie: {content.CATEGORIES}
+                    Tagi: {content.TAGS}
+                </div>
+            </div>
+    
+        </header>
+        
+        <article class="panelMainShort contentNews">
+        {content.CONTENT}
+        </article>
+        
+        <footer class="panelBottom">
+            <span class="newsComments">
+            <!-- IF U_CAN_EDIT -->
+                (<a href="{content.EDITLINK}">Edytuj</a>)
+            <!-- ENDIF -->
+            </span>
+        
+        </footer>
+    </div>
+    <!-- END content -->
+
+    {PAGINATION}
+<!-- ELSE IF NUM_RESULTS = 0 -->
+    <div class="panel">
+        <div class="panelTop">
+            Wyniki wyszukiwania
+        </div>
+        <div class="panelMain">Niestety nic nie znaleziono.</div>
+        <div class="panelBottom"></div>
+    </div>
+<!-- ENDIF -->

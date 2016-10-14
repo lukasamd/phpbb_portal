@@ -1,0 +1,10 @@
+/*  SafeGroup.pl Style Sheet
+    --------------------------------------------------------------
+	Style name:			SafeGroup.pl	
+	Original author:	Lukasz Tkacz ( http://safegroup.pl/ )
+    --------------------------------------------------------------
+*/
+@import url("global.css");
+@import url("common.css");
+@import url("fancybox.css");
+@import url("gallery.css");

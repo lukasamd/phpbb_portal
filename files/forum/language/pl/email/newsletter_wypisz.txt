@@ -1,0 +1,12 @@
+Subject: SafeGroup Newsletter - Potwierdzenie
+
+Czas zapisania: {CZAS}
+IP użytkownika: {IP}
+Aby potwierdzić usunięcie Twojego adresu email z newslettera serwisu SafeGroup wejdź na poniższy adres:
+
+http://safegroup.pl/newsletter/{KEY}/
+
+
+---
+SafeGroup - Bezpieczeństwo komputerowe
+http://safegroup.pl/

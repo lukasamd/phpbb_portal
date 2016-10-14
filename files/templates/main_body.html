@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>{META_TITLE}</title>
+        <meta name="description" content="{META_DESCRIPTION}" />
+        <meta name="keywords" content="" />
+        <meta name="robots" content="follow, index" />
+        <base href="{U_HOME}" />
+        <!-- IF META_CANONICAL -->
+        <link rel="canonical" href="{META_CANONICAL}" />
+        <!-- ENDIF -->
+
+        <link href="{DIR_THEME}styles.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Dosis:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{DIR_THEME}jquery.min.js">\x3C/script>')</script>
+        
+        <script src="{DIR_THEME}jquery.fancybox.js"></script>
+        <script src="{DIR_THEME}javascript.js"></script>
+        <!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    </head>
+    <body>
+    <!-- IF S_IS_ADMIN --><div style="text-align:center;margin:20px">{DEBUG}</div><!-- ENDIF -->
+        <header>
+            <div id="topBar">                     
+                <ul>                
+                    <li><a href="/">Portal</a></li>
+                    <li><a href="{U_FORUM}/">Forum</a></li>    
+                </ul>  
+                              
+                <ul>        
+                    <!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->                
+                    <li>{LOGGED_IN_AVATAR}{TOP_WELCOME_MESSAGE} {USER_LINK}</li>                
+                    <li><a href="{U_FORUM}/ucp.php?i=pm&amp;folder=inbox">Wiadomości</a></li>
+                    <li><a href="{U_FORUM}/ucp.php">Ustawienia</a></li>   
+                    <!-- IF S_IS_ADMIN --><li><a href="{DIR_ACP}">ACP</a></li><!-- ENDIF -->       
+                    <!-- IF U_RESTORE_PERMISSIONS -->                      
+                    <li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>  				
+                    <!-- ENDIF -->                
+                    <li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}">Wyloguj</a></li>            
+                    <!-- ELSEIF not S_IS_BOT and not S_USER_LOGGED_IN and S_REGISTER_ENABLED -->
+                        <li><a id="loginlink" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a>
+                        <div id="quickLoginBox" style="text-indent:-9900px">
+                          <form method="post" action="{U_FORUM}/ucp.php?mode=login" style="display:inline;">	 		
+                            <input type="text" name="username" value="Login" onfocus="if(this.value == 'Login') { this.value=''; }" onblur="if(this.value == '') { this.value='Login'; }" style="margin-right:5px;" /> 
+                            <input type="password" name="password" value="12345" onfocus="if(this.value == '12345') { this.value=''; }" onblur="if(this.value == '') { this.value='12345'; }" /> &nbsp;  
+                            <input type="submit" class="button2" name="login" value="Zaloguj" /> &nbsp;
+                            <input id="quickLoginRemeber" type="checkbox" class="radio" name="autologin" style="vertical-align:middle" /> 
+                            <label for="quickLoginRemeber" style="color:silver">Zapamiętaj mnie</label>  	
+                          </form> 
+                          
+                          &mdash; <a href="{U_FORUM}/ucp.php?mode=sendpassword">Nie pamiętam hasła</a></div></li>
+                          <li><a href="{U_FORUM}/ucp.php?mode=register">{L_REGISTER}</a></li>
+                    <!-- ENDIF -->           
+                </ul>                     
+            </div> 
+            
+            <div id="topMain">
+                <!-- IF IS_HOME_URL --><h1<!-- ELSE --><div<!-- ENDIF --> id="topLogo">
+                    <a href="/" title="Testowa strona">Testowa strona</a>
+                <!-- IF IS_HOME_URL --></h1><!-- ELSE --> </div><!-- ENDIF -->
+            </div>
+            
+        </header>
+        
+        
+         
+        
+        <nav>
+            <div class="nav-header-links leftside">
+                <a class="icon-home" href="/">Portal</a> 
+            </div>
+            <div id="headerSearch">
+                <a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">
+                    <span class="unlink">{L_SEARCH_ADV}</span></a>
+                <form action="{SEARCH_ACTION}" method="post">
+                    <fieldset>
+                        <input type="text" value="<?php echo $searchKeyword; ?>" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" maxlength="128" title="{L_SEARCH_KEYWORDS}" name="q" class="textbox" />
+                    </fieldset>
+                </form>
+            </div>
+            <ul id="socialIcons">
+                <li><a href="{U_FORUM}/feed.php?mode=topics" class="share_rss" title="Subskrypcja RSS"><span class="unlink">RSS</span></a></li>
+                <li><a href="https://www.facebook.com/" class="share_facebook" title="Nasz Facebook"><span class="unlink">Nasz Facebook</span></a></li>
+                <li><a href="https://twitter.com/#!/" class="share_twitter" title="Nasz Twitter"><span class="unlink">Nasz Twitter</span></a></li>
+                <li><a href="https://www.youtube.com/" class="share_youtube" title="Nasz kanał Youtube"><span class="unlink">Nasz kanał Youtube</span></a></li>
+            </ul>
+        </nav>
+        <div id="pageMain">
+            <!-- IF PANELS_LEFT -->
+                <div class="sideLeft">{PAGE_LEFT}</div>
+            <!-- ENDIF -->
+                <div class="sideCenter" style="width:{CENTER_WIDTH}px;{CENTER_RADIUS}">{PAGE_CENTER}</div>
+            <!-- IF PANELS_RIGHT -->
+                <div class="sideRight">{PAGE_RIGHT}</div>
+            <!-- ENDIF -->
+        </div>
+        <footer id="pageFooter">
+            <!-- 
+            <nav id="footernav">
+                <ul><li></li></ul>
+            </nav>
+            -->
+            <div id="copyright">
+                Copyright &copy; {CURRENT_YEAR} {PORTAL_NAME}
+                
+            </div>
+        </footer>
+        
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    window.___gcfg = {
+        lang: 'pl-PL',
+        parsetags: 'onload'
+    };
+  })();
+</script>
+
+        
+        <!-- IF GOOGLE_ANALYTICS_ID -->
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{GOOGLE_ANALYTICS_ID}']);
+    _gaq.push(['_trackPageview']);
+    (public function() {
+        var ga = document.createElement('script']; ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+        <!-- ENDIF -->
+    </body>
+</html>

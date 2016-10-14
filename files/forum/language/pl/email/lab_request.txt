@@ -1,0 +1,20 @@
+Subject: Podanie o dostęp do laboratorium
+
+Pojawiło się nowe podanie o dostęp do laboratorium
+
+Nazwa użytkownika: {USER_USERNAME}
+Imię: {USER_NAME}
+Nazwisko: {USER_SURNAME}
+Firma: {USER_COMPANY}
+Email: {USER_EMAIL}
+Telefon: {USER_PHONE}
+IP: {USER_IP}
+Czas: {DATELINE}
+
+Powód: 
+{USER_REASON}
+
+
+----------
+Pozdrawiam,
+Automat Lab SafeGroup.pl

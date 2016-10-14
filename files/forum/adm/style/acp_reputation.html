@@ -1,0 +1,66 @@
+<!-- INCLUDE overall_header.html -->
+
+<a name="maincontent"></a>
+
+<h1>{L_ACP_REPUTATION_SETTINGS}</h1>
+<p>{L_ACP_REPUTATION_SETTINGS_EXPLAIN}</p>
+
+
+<form id="acp_thanks" method="post" action="{U_ACTION}">
+
+<fieldset>
+	<legend>{L_GENERAL_OPTIONS}</legend>
+	<dl>
+		<dt><label for="reputation_allow_remove">{L_REPUTATION_ALLOW_REMOVE}:</label><br /><span>{L_REPUTATION_ALLOW_REMOVE_EXPLAIN}</span></dt>
+		<dd><label><input type="radio" class="radio" id="reputation_allow_remove" name="reputation_allow_remove" value="1"<!-- IF REPUTATION_ALLOW_REMOVE --> checked="checked"<!-- ENDIF --> /> {L_ENABLED}</label>
+		<label><input type="radio" class="radio" name="reputation_allow_remove" value="0"<!-- IF not REPUTATION_ALLOW_REMOVE --> checked="checked"<!-- ENDIF --> /> {L_DISABLED}</label></dd>
+	</dl>
+	<dl>
+		<dt><label for="reputation_postlist_view">{L_REPUTATION_POSTLIST_VIEW}:</label><br /><span>{L_REPUTATION_POSTLIST_VIEW_EXPLAIN}</span></dt>
+		<dd><label><input type="radio" class="radio" id="reputation_postlist_view" name="reputation_postlist_view" value="1"<!-- IF REPUTATION_POSTLIST_VIEW --> checked="checked"<!-- ENDIF --> /> {L_ENABLED}</label>
+		<label><input type="radio" class="radio" name="reputation_postlist_view" value="0"<!-- IF not REPUTATION_POSTLIST_VIEW --> checked="checked"<!-- ENDIF --> /> {L_DISABLED}</label></dd>
+	</dl>
+	<dl>
+		<dt><label for="reputation_counter_topic">{L_REPUTATION_COUNTER_TOPIC}:</label><br /><span>{L_REPUTATION_COUNTER_TOPIC_EXPLAIN}</span></dt>
+		<dd><label><input type="radio" class="radio" id="reputation_counter_topic" name="reputation_counter_topic" value="1"<!-- IF REPUTATION_COUNTER_TOPIC --> checked="checked"<!-- ENDIF --> /> {L_ENABLED}</label>
+		<label><input type="radio" class="radio" name="reputation_counter_topic" value="0"<!-- IF not REPUTATION_COUNTER_TOPIC --> checked="checked"<!-- ENDIF --> /> {L_DISABLED}</label></dd>
+	</dl>
+	<dl>
+		<dt><label for="reputation_counter_profile">{L_REPUTATION_COUNTER_PROFILE}:</label><br /><span>{L_REPUTATION_COUNTER_PROFILE_EXPLAIN}</span></dt>
+		<dd><label><input type="radio" class="radio" id="reputation_counter_profile" name="reputation_counter_profile" value="1"<!-- IF REPUTATION_COUNTER_PROFILE --> checked="checked"<!-- ENDIF --> /> {L_ENABLED}</label>
+		<label><input type="radio" class="radio" name="reputation_counter_profile" value="0"<!-- IF not REPUTATION_COUNTER_PROFILE --> checked="checked"<!-- ENDIF --> /> {L_DISABLED}</label></dd>
+	</dl>
+	<dl>
+		<dt><label for="reputation_info_page">{L_REPUTATION_INFO_PAGE}:</label><br /><span>{L_REPUTATION_INFO_PAGE_EXPLAIN}</span></dt>
+		<dd><label><input type="radio" class="radio" id="reputation_info_page" name="reputation_info_page" value="1"<!-- IF REPUTATION_INFO_PAGE --> checked="checked"<!-- ENDIF --> /> {L_ENABLED}</label>
+		<label><input type="radio" class="radio" name="reputation_info_page" value="0"<!-- IF not REPUTATION_INFO_PAGE --> checked="checked"<!-- ENDIF --> /> {L_DISABLED}</label></dd>
+	</dl>
+	<dl>
+		<dt><label for="reputation_only_first_post">{L_REPUTATION_ONLY_FIRST_POST}:</label><br /><span>{L_REPUTATION_ONLY_FIRST_POST_EXPLAIN}</span></dt>
+		<dd><label><input type="radio" class="radio" id="reputation_only_first_post" name="reputation_only_first_post" value="1"<!-- IF REPUTATION_ONLY_FIRST_POST --> checked="checked"<!-- ENDIF --> /> {L_ENABLED}</label>
+		<label><input type="radio" class="radio" name="reputation_only_first_post" value="0"<!-- IF not REPUTATION_ONLY_FIRST_POST --> checked="checked"<!-- ENDIF --> /> {L_DISABLED}</label></dd>
+	</dl>
+	<dl>
+		<dt><label for="reputation_restriction_times">{L_REPUTATION_RESTRICTION_TIMES}:</label><br /><span>{L_REPUTATION_RESTRICTION_TIMES_EXPLAIN}</span></dt>
+		<dd><input id="reputation_restriction_times" name="reputation_restriction_times" value="{REPUTATION_RESTRICTION_TIMES}" type="text" /></dd>
+	</dl>
+	<dl>
+		<dt><label for="reputation_restriction_minpoints">{L_REPUTATION_RESTRICTION_MINPOINTS}:</label><br /><span>{L_REPUTATION_RESTRICTION_MINPOINTS_EXPLAIN}</span></dt>
+		<dd><input id="reputation_restriction_minpoints" name="reputation_restriction_minpoints" value="{REPUTATION_RESTRICTION_MINPOINTS}" type="text" /></dd>
+	</dl>
+	<dl>
+		<dt><label for="reputation_restriction_interval">{L_REPUTATION_RESTRICTION_INTERVAL}:</label><br /><span>{L_REPUTATION_RESTRICTION_INTERVAL_EXPLAIN}</span></dt>
+		<dd><input id="reputation_restriction_interval" name="reputation_restriction_interval" value="{REPUTATION_RESTRICTION_INTERVAL}" type="text" /></dd>
+	</dl>
+</fieldset>
+<fieldset class="submit-buttons">
+	<legend>{L_SUBMIT}</legend>
+	<input type="hidden" name="action" value="save" />
+
+	<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+	<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+	{S_FORM_TOKEN}
+</fieldset>
+</form>
+
+<!-- INCLUDE overall_footer.html -->

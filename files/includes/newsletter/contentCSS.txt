@@ -1,0 +1,46 @@
+a, a:link, a:visited {
+  color: #368AD2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+body {
+  color:#000;
+}
+
+.tabelka {
+  background-color: #EEE;
+  border: 2px solid #252525;
+  border-radius: 20px;
+  color: #555;
+  min-height: 25px;
+  padding: 6px 12px;
+  line-height: 1.5;
+  font-family: Verdana, Tahoma;
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.data {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+hr {
+  color: #111111;
+  border: 0;
+  border-top: 1px;
+  border-color: #000000;
+  border-style: dotted;
+}
+
+

@@ -1,0 +1,48 @@
+<div class="panel">
+    <header class="panelTop">
+        <h1 class="title">
+            <a href="CAT_URL">{CAT_TITLE}</a> &mdash;
+            <a href="{URL}" title="{TITLE}">{TITLE} {VERSION}</a>
+        </h1>
+    </header>
+    <article class="panelMainShort contentNews">
+        <div style="float:right; margin: 0 0 10px 20px">
+            <a href="{GALLERY_URL}">
+                <img src="{GALLERY_DIR}{SCREEN_THUMB2}" longdesc="{GALLERY_DIR}{SCREEN_FILENAME}" title="{SCREEN_TITLE}" style="width:300px;"  />
+            </a>
+        </div>
+        <div id="programInfo">
+            <div style="float:right;">
+                <strong>Download</strong>
+                <br />
+                <form method="post" action="">
+                <select>
+                <!-- BEGIN files -->
+                    <option value="">{files.TITLE}</option>
+                <!-- END files -->
+                </select>
+                <br /><br />
+                <input type="submit" value="Kliknij aby pobrać" class="button" />
+                </form>
+            </div>
+        <strong>Producent:</strong> <a href="{COMPANY_URL}">{COMPANY_NAME}</a>
+        <br style="margin-bottom: 7px;" />
+        <strong>Data dodania:</strong> {TIME_ADD}
+        <br style="margin-bottom: 7px;" />
+        <strong>Data aktualizacji:</strong> {TIME}
+        <br style="margin-bottom: 7px;" />
+        <strong>Wersja:</strong> {VERSION}
+        </div>
+        {CONTENT}
+        <hr />
+    </article>
+    <footer class="panelBottom">
+        <span class="articleComments">
+            <!-- IF U_CAN_EDIT -->
+            (<a href="{EDITLINK}">Edytuj</a>)
+            <!-- ENDIF -->
+            <a href="{URL}#listComments" title="Skomentuj: {TITLE}"> Komentarze ({COMMENTS})</a>
+            &middot; {VIEWS} odsłon
+        </span>
+    </footer>
+</div>

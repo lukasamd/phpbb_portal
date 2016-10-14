@@ -1,0 +1,168 @@
+.programGallery {
+  width: 1000px;
+}
+.programGallery, .programGallery * {
+  margin: auto;
+  padding: 0;
+}
+  .programGallery .gallery-image-wrapper {
+    width: 100%;
+    height: 700px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+    .programGallery .gallery-image-wrapper .gallery-loader {
+      position: absolute;
+      z-index: 10;
+      top: 48%;
+      left: 48%;
+      border: 1px solid #CCC;
+    }
+    .programGallery .gallery-image-wrapper .gallery-next {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      cursor: pointer;
+      display: block;
+      z-index: 100;
+    }
+    .programGallery .gallery-image-wrapper .gallery-prev {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      cursor: pointer;
+      display: block;
+      z-index: 100;
+    }
+    .programGallery .gallery-image-wrapper .gallery-prev, .programGallery .gallery-image-wrapper .gallery-next {
+      /* Or else IE will hide it */
+      background: url(../images/gallery/non-existing.jpg)\9
+    }
+      .programGallery .gallery-image-wrapper .gallery-prev .gallery-prev-image, .programGallery .gallery-image-wrapper .gallery-next .gallery-next-image {
+        background: url(../images/gallery/ad_prev.png);
+        width: 30px;
+        height: 30px;
+        display: none;
+        position: absolute;
+        top: 47%;
+        left: 0;
+        z-index: 101;
+      }
+      .programGallery .gallery-image-wrapper .gallery-next .gallery-next-image {
+        background: url(../images/gallery/ad_next.png);
+        width: 30px;
+        height: 30px;
+        right: 0;
+        left: auto;
+      }
+    .programGallery .gallery-image-wrapper .gallery-image {
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: 9;
+    }
+      .programGallery .gallery-image-wrapper .gallery-image a img {
+        border: 0;
+      }
+      .programGallery .gallery-image-wrapper .gallery-image .gallery-image-description {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        padding: 7px;
+        text-align: left;
+        width: 100%;
+        z-index: 2;
+        background: url(../images/gallery/opa75.png);
+        color: #000;
+      }
+      * html .programGallery .gallery-image-wrapper .gallery-image .gallery-image-description {
+        background: none;
+        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader (enabled=true, sizingMethod=scale, src='opa75.png');
+      }
+        .programGallery .gallery-image-wrapper .gallery-image .gallery-image-description .gallery-description-title {
+          display: block;
+        }
+  .programGallery .gallery-controls {
+    height: 20px;
+  }
+    .programGallery .gallery-info {
+      float: left;
+    }
+    .programGallery .gallery-slideshow-controls {
+      float: right;
+    }
+      .programGallery .gallery-slideshow-controls .gallery-slideshow-start, .programGallery .gallery-slideshow-controls .gallery-slideshow-stop {
+        padding-left: 5px;
+        cursor: pointer;
+      }
+      .programGallery .gallery-slideshow-controls .gallery-slideshow-countdown {
+        padding-left: 5px;
+        font-size: 0.9em;
+      }
+    .programGallery .gallery-slideshow-running .gallery-slideshow-start {
+      cursor: default;
+      font-style: italic;
+    }
+  .programGallery .gallery-nav {
+    width: 100%;
+    position: relative;
+  }
+    .programGallery .gallery-forward, .programGallery .gallery-back {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      z-index: 10;
+    }
+    /* IE 6 doesn't like height: 100% */
+    * html .programGallery .gallery-forward, .programGallery .gallery-back {
+      height: 100px;
+    }
+    .programGallery .gallery-back {
+      cursor: pointer;
+      left: -20px;
+      width: 13px;
+      display: block;
+      background: url(../images/gallery/ad_scroll_back.png) 0px 22px no-repeat;
+    }
+    .programGallery .gallery-forward {
+      cursor: pointer;
+      display: block;
+      right: -20px;
+      width: 13px;
+      background: url(../images/gallery/ad_scroll_forward.png) 0px 22px no-repeat;
+    }
+    .programGallery .gallery-nav .gallery-thumbs {
+      overflow: hidden;
+      width: 100%;
+    }
+      .programGallery .gallery-thumbs .gallery-thumb-list {
+        float: left;
+        width: 9000px;
+        list-style: none;
+      }
+        .programGallery .gallery-thumbs li {
+          float: left;
+          padding-right: 5px;
+        }
+          .programGallery .gallery-thumbs li a {
+            display: block;
+          }
+            .programGallery .gallery-thumbs li a img {
+              border: 3px solid #CCC;
+              display: block;
+            }
+            .programGallery .gallery-thumbs li a.gallery-active img {
+              border: 3px solid #616161;
+            }
+/* Can't do display none, since Opera won't load the images then */
+.gallery-preloads {
+  position: absolute;
+  left: -9000px;
+  top: -9000px;
+}

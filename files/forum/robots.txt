@@ -1,0 +1,19 @@
+Sitemap: http://forum.safegroup.pl/sitemapindex.xml
+
+User-agent: *
+# Katalogi
+Disallow: /adm/
+Disallow: /cache/
+Disallow: /includes/
+Disallow: /language/
+Disallow: /phpbb_seo/
+Disallow: /store/
+Disallow: /styles/
+# Pliki
+Disallow: /config.php
+Disallow: /common.php
+Disallow: /cron.php
+Disallow: /fs.php
+Disallow: /mcp.php
+Disallow: /report.php
+Disallow: /style.php

@@ -1,0 +1,243 @@
+* {
+/******* Reset browsers default margin, padding and font sizes *******/
+	margin: 0;
+	padding: 0;
+}
+img, fieldset {
+	border: 0;
+}
+
+/*******  HTML5 tags *******/
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+/*******  Main elements *******/
+body {
+    font-family: "Segoe UI","Ubuntu","Calibri",Arial,sans-serif,Verdana;
+	color: #EEEEEE;
+	background-color: #444;
+	font-size: 14px;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 0;
+	width: 990px;
+}
+
+
+/******* Header elements *******/
+body > header {
+	color: #FFFFFF;
+	margin-bottom: 2px;
+	position: relative;
+	overflow: hidden;
+	clear: both;
+	width: 100%;
+	height: 110px;
+    font-family: Verdana,Helvetica,Arial,sans-serif;
+}
+#topLogo {
+	margin-right: 0;
+	margin: 15px 0 0 20px;
+	font-weight: bold;
+}
+#topLogo a {
+	display: block;
+	width: 500px;
+	height: 80px;
+	background-image: url("https://cdn.safegroup.pl/img/logo-portal.png");
+	background-repeat: no-repeat;
+}
+body > nav {
+	background-color: #707070;
+	position: relative;
+	padding: 0 8px;
+	height: 32px;
+	top: 0;
+	z-index: 1;
+	overflow: hidden;
+    margin: 0 20px 20px;
+    border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 5px #666;
+	-moz-box-shadow: 0px 0px 5px #666;
+	box-shadow: 0px 0px 5px #666;
+}
+body > nav a:link,
+body > nav a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 11px;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+body > nav a:hover {
+	text-decoration: underline;
+}
+body > nav a:first-child {
+    background-image: url("https://cdn.safegroup.pl/img/icon-home.png");
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	padding: 1px 0 0 20px;
+}
+.nav-header-links {
+	color: #FFFFFF;
+	display: block;
+	font-size: 11px;
+	padding: 7px 0;
+	float: left;
+	margin-left: 0;
+	margin-right: 5px;
+	text-align: left;
+}
+.unlink {
+	display: none;
+}
+
+
+/******* Main container elements *******/
+#pageMain {
+	background: #707070;
+	border-radius: 15px 15px 15px 15px;
+	margin: auto;
+	overflow: hidden;
+	top: 140px;
+	width: 900px;
+    box-shadow: 0px 0px 5px #666;
+}
+
+aside {
+	background: #606060;
+	float: right;
+	padding: 20px;
+	width: 257px;
+	min-height: 400px;
+}
+
+article {
+	float: left;
+	padding: 5px 15px 15px;
+	margin: 0 0 0 -1px;
+	text-align: justify;
+	width: 574px;
+}
+
+
+/******* Footer elements *******/
+footer {
+	border-top: 1px dotted;
+	clear: both;
+	color: #999999;
+	height: 50px;
+	margin: 35px auto auto;
+	padding-top: 10px;
+	text-align: center;
+	width: 900px;
+}
+#copyright {
+	font-size: 12px;
+	padding-top: 15px;
+}
+
+
+/******* Social icons *******/
+#socialIcons {
+	height: 20px;
+	list-style-type: none;
+	margin: auto;
+	padding: 0;
+	text-align: center;
+	width: 114px;
+	float: right;
+	margin-top: 4px;
+}
+#socialIcons > li {
+	display: inline;
+}
+#socialIcons > li > a {
+	float: left;
+	height: 22px;
+	margin: 1px 2px;
+	padding: 0;
+	width: 22px;
+	background: url("https://cdn.safegroup.pl/img/social_icons.png") no-repeat scroll -25px 0 transparent;
+	opacity: 0.9;
+}
+#socialIcons > li > a:hover {
+	opacity: 1.0;
+}
+#socialIcons > li > .share_facebook {
+	background-position: 0 0;
+	width: 22px;
+	height: 22px;
+}
+#socialIcons > li > .share_rss {
+	background-position: -46px 0;
+	width: 22px;
+	height: 22px;
+}
+#socialIcons > li > .share_twitter {
+	background-position: -69px 0;
+	width: 22px;
+	height: 22px;
+}
+#socialIcons > li > .share_youtube {
+	background-position: -92px 0;
+	width: 22px;
+	height: 22px;
+}
+
+
+/* Positioning */
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+
+/* Elements */
+a:link, a:visited {
+  color: gold;
+}
+
+a:hover {
+    color: yellow;
+}
+
+sup {
+    font-size: bold;
+    color: red;
+}
+
+
+/* Input, forms */
+.button,
+input[type="submit"], 
+input[type="button"] {
+	background: url("https://cdn.safegroup.pl/img/bg_button.gif") repeat scroll 0 0 transparent;
+	border: 1px solid #666666;
+	color: #000000;
+	cursor: pointer;
+	font-size: 12px;
+    padding: 2px 10px;
+}
+.button:hover, .button:focus,
+input[type="submit"]:hover, input[type="submit"]:focus,
+input[type="button"]:hover, input[type="button"]:focus {
+	color: #BC2A4D;
+	border-color: #BC2A4D;
+}
+.textbox,
+input[type="text"], 
+textarea {
+	color: #333333;
+	background-color: #FFFFFF;
+	border: 1px #B4BAC0 solid;
+	padding: 2px;
+	margin-top: 5px;
+}
+.textbox:hover, .textbox:focus,
+input[type="text"]:hover, input[type="text"]:focus,
+textarea:hover, textarea:focus {
+	color: #0F4987;
+	border: 1px #11A3EA solid;
+}

@@ -1,0 +1,27 @@
+<div class="panel">
+  <header class="panelTop">
+      <h1 class="title">
+        <a href="{CAT_URL}" title="Zobacz kategorię: {CAT_TITLE}">{CAT_TITLE}</a>: <a href="{URL}" title="Zobacz program: {TITLE}">{TITLE}</a> - Galeria programu
+      </h1>
+  </header>
+  <article class="panelMainShort contentNews">
+    <div class="programGallery">
+      <div class="gallery-nav">
+        <div class="gallery-thumbs">
+          <ul class="gallery-thumb-list">
+          	<!-- BEGIN screen -->
+                <li>
+                  <a href="{CAT_DIR}{screen.FILENAME}">
+                    <img src="{CAT_DIR}{screen.THUMB1}" longdesc="{CAT_DIR}{screen.FILENAME}" title="{screen.TITLE}" />
+                  </a>
+                </li>
+            <!-- END SCREEN -->
+          </ul>
+        </div>
+      </div>
+      <div class="gallery-image-wrapper"></div>
+    </div>
+  </article>
+  <footer class="panelBottom">
+  </footer>
+</div>

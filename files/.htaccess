@@ -1,0 +1,25 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^forum\.localhost\.net$ [NC]
+RewriteCond %{REQUEST_URI} !^/forum/
+RewriteRule ^(.*)$ /forum/$1 [L]
+
+RewriteRule ^chat/$ index.php?module=Chat [L] 
+RewriteRule ^rss/$ index.php?module=RSS [L] 
+RewriteRule ^([0-9]+)/$ index.php?module=Content&page=$1 [L]
+RewriteRule ^kategoria/([a-z0-9_-]+)/(([0-9]+)/)?$ index.php?module=Category&url=$1&page=$3 [L]
+RewriteRule ^tag/([a-z0-9_-]+)/(([0-9]+)/)?$ index.php?module=Tag&url=$1&page=$3 [L]
+
+RewriteRule ^szukaj/([a-z0-9_-]+)/(([0-9]+)/)?$ index.php?module=Search&q=$1&page=$3 [L]
+RewriteRule ^szukaj/([a-z0-9_-]+/(([0-9]+)/)?)?$ index.php?module=Search&q=$1&page=$3 [L]
+
+RewriteRule ^art([0-9]+)/$ index.php?module=Content&id=$1 [L]
+RewriteRule ^([a-z0-9_-]+)/$ index.php?module=Content&id=$1 [L]
+    
+RewriteRule ^index\.php$ - [L]
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . index.php [L,QSA]
+

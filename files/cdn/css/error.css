@@ -1,0 +1,32 @@
+a:link, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+article {
+    width: auto;
+    text-align: justify;
+    padding: 10px 120px 30px 120px;
+}
+
+p#contact {
+    text-align: right;
+}
+
+span {
+    margin:auto;
+    text-align:center;
+    display: block;
+}
+
+h2 {
+	color:red;
+    letter-spacing: 1px;
+}
+
+#pageMain {
+    background: transparent;
+}

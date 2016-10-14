@@ -1,0 +1,85 @@
+<div class="panel">
+  <div class="panelTop">
+		Wyszukiwarka serwisu
+	</div>
+  <div class="panelMain">
+	  <form id="formSearch" action="{FORM_ACTION}" method="post">
+	    <fieldset>
+	      <input type="text" value="{KEYWORD}" name="q" class="textbox" style="width:300px;font-size:12px;" />
+	      <input type="submit" value="Szukaj w serwisie" class="button" />
+	      <br />
+	      Sortowanie:
+	      <input type="radio" name="sortBy" value="time"<!-- IF SORT_BY_TIME --> checked="checked"<!-- ENDIF --> /> data
+	      <input type="radio" name="sortBy" value="title"<!-- IF SORT_BY_TITLE --> checked="checked"<!-- ENDIF --> /> nazwa
+	      <input type="checkbox" name="searchInContent" <!-- IF SEARCH_IN_CONTENT --> checked="checked"<!-- ENDIF --> />
+	      szukanie w opisach
+	      <table>
+	        <tr>
+                <!-- IF IS_LUKASAMD -->
+	        	<!-- BEGIN option -->
+	          <td>
+	            <input type="checkbox" name="searchOptions[{option.NAME}]"<!-- IF option.CHECKED --> checked="checked"<!-- ENDIF --> />
+	            {option.TITLE}
+	          </td>
+	          <!-- END option -->
+              <!-- ENDIF -->
+	        </tr>
+	        <tr>
+	          <td></td>
+	          <td></td>
+	        </tr>
+	      </table>
+	    </fieldset>
+	  </form>
+	  <br />
+		<!-- IF ERROR_LENGTH -->
+			<h4 class="komunikat-bad center">
+			  Podana fraza jest zbyt krótka!
+			</h4>
+		<!-- ENDIF -->
+  </div>
+  <div class="panelBottom"></div>
+</div>
+        
+        
+        
+<div class="panel">
+  <div class="panelTop">
+		Wyniki wyszukiwania
+	</div>
+  <div class="panelMain">
+		<!-- BEGIN type -->
+			<h4 class="search-title">{type.TITLE}</h4>
+			<span class="search-matches">
+				{type.MATCHES}
+				<!-- IF type.SEARCH_MORE -->
+					<form id="formSearch" action="{FORM_ACTION}" method="post">
+						<input type="hidden" name="q" value="{KEYWORD}">
+						<!-- IF SEARCH_IN_CONTENT --><input type="hidden" name="searchInContent" value="true" /><!-- ENDIF -->
+						<input type="hidden" name="searchInContent" value="true" />
+						<input type="hidden" name="searchOptions[{type.TYPE}]" value="true" />
+						<input type="hidden" name="searchMode" value="{type.TYPE}" />
+						<input type="submit" value="Zobacz wszystko" class="searchMoreLink" />
+					</form>
+				<!-- ENDIF -->
+			</span>
+			<!-- IF type.MATCHES_COUNT -->
+				<ul class="list">
+				<!-- BEGIN result -->
+			    <li class="listElement">
+			      <h2 class="listElementTitle"><a href="{result.URL}" class="block">{result.TITLE}</a></h2>
+			      <span class="listElementMeta">
+			        <b>Dodano:</b> {result.TIME} &middot;
+			        <b>Komentarzy:</b> {result.COMMENTS}
+			      </span>
+			      <span class="listElementDesc">
+			        {result.META}
+			      </span>
+			    </li>
+				<!-- END result -->
+				</ul>
+			<!-- ENDIF -->
+		<!-- END type -->
+  </div>
+  <div class="panelBottom"></div>
+</div>

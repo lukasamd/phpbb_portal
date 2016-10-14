@@ -1,0 +1,56 @@
+<div class="panel">
+    <div class="panelTop">
+        Materiały otagowane &#187; {TAG_TITLE}
+    </div>
+    <div class="panelMain"></div>
+    <div class="panelBottom"></div>
+</div>
+
+
+<!-- BEGIN content -->
+<div class="panel">
+    <header class="panelTop newsListHeader">
+  
+        <div class="contentTop">
+            <span class="contentShare">
+                <g:plusone size="small" annotation="none" href="href="{content.URL}"></g:plusone>
+                <a href="http://www.facebook.com/share.php?u={content.URL}"><img src="theme/fb_icon.png" /></a>
+                <a href="http://www.facebook.com/share.php?u={content.URL}"><img src="theme/tw_icon.png" /></a>
+            </span>
+            
+            <h2 class="title newsListTitle"><a href="{content.URL}" title="{content.TITLE}">{content.TITLE}</a></h2>
+        </div>
+        
+        <div class="contentMeta">
+            <div class="contentMetaComments">
+                <a href="{content.URL}#listComments" title="Skomentuj: {content.TITLE}">Komentarze ({content.COMMENTS})</a>
+            </div>
+        
+            <div class="contentMetaAuthor">
+                <time datetime="{content.DATETIME}" pubdate>{content.TIME}</time>,
+                Autor: {content.AUTHOR}
+                <br />
+                Kategorie: {content.CATEGORIES}
+                Tagi: {content.TAGS}
+            </div>
+        </div>
+
+    </header>
+    
+    <article class="panelMainShort contentNews">
+    <!-- IF content.IMAGE_EXIST -->
+        <img src="{content.IMAGE}" alt="" class="newsImage" />
+    <!-- ENDIF -->
+    {content.CONTENT}
+    </article>
+    
+    <footer class="panelBottom">
+        <span class="newsComments">
+        <!-- IF U_CAN_EDIT -->
+            (<a href="{content.EDITLINK}">Edytuj</a>)
+        <!-- ENDIF -->
+        </span>
+    
+    </footer>
+</div>
+<!-- END news -->

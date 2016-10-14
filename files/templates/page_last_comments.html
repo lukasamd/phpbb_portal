@@ -1,0 +1,23 @@
+<!-- BEGIN module -->
+<div class="panel">
+  <div class="panelTop">Ostatnio komentowane {module.TITLE}</div>
+  <div class="panelMain">
+	<ul id="listComments">
+  	<!-- BEGIN comment -->
+				<li id="comment{comment.ID}">
+          <span class="commentAuthor" title="{comment.USERAGENT}">
+            {comment.AVATAR}{comment.NAME}
+          </span>
+          <time datetime="{comment.TIME_SEO}" pubdate class="commentDate">{comment.TIME}</time>
+          <br />
+					<span class="small" style="float:right;">
+          	<a href="{comment.URL}">Zobacz materiał</a>
+          </span>
+					<p class="commentMessage">{comment.MESSAGE}</p>
+        </li>
+    <!-- END comment -->
+	</ul>
+  </div>
+  <div class="panelBottom"></div>
+</div>
+<!-- END module -->

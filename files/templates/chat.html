@@ -1,0 +1,142 @@
+<style>
+    #msg {width:330px;}
+
+.chat {
+	border: 1px solid #CCC;
+	width: 90%;
+	height: 300px;
+	overflow: auto;
+}
+
+#log li {
+	list-style-type: square;
+	margin-left: 25px;
+}
+
+h3 {
+	margin-bottom: 15px;
+	font-size: 18px;
+
+}
+</style>
+
+<script>
+    var socket;
+    var nick;
+
+	function nickOsoby()
+	{		
+		nick = prompt("Proszę podać nick","Annonimowy");
+	}
+
+
+
+
+
+	function getCurrentTime() {
+		var currentTime = new Date()
+		var hours = currentTime.getHours()
+		var minutes = currentTime.getMinutes()
+
+		if (minutes < 10)
+		minutes = "0" + minutes
+
+		return("<b>" + hours + ":" + minutes + " " + "</b>");
+	}
+
+
+
+    function createSocket(host) {
+        if ('WebSocket' in window)
+            return new WebSocket(host);
+        else if ('MozWebSocket' in window)
+            return new MozWebSocket(host);
+
+        throw new Error("Brak obsługi WebSocket!");
+    }
+
+    function init() {
+	nickOsoby();
+
+
+        var host = "ws://localhost:12345/chat";
+        try {
+            socket = createSocket(host);
+            log('WebSocket - status ' + socket.readyState);
+
+            socket.onopen = function(msg) {
+                log("Witaj - status " + this.readyState);
+            };
+
+            socket.onmessage = function(msg) {
+                log(msg.data);
+            };
+
+            socket.onclose = function(msg) {
+                log("Rozłączono - status " + this.readyState);
+            };
+        }
+        catch (ex) {
+            log(ex);
+        }
+        document.getElementById("msg").focus();
+    }
+
+    function send() {
+        var msg = document.getElementById('msg').value;
+	msg = "<b>" + nick + "</b>: " + msg;
+
+        try {
+            socket.send(msg);
+        } catch (ex) {
+            log(ex);
+        }
+    }
+
+    function log(msg) {
+        document.getElementById("log").innerHTML += "<li>" + getCurrentTime() + msg + "</li>";
+    }
+
+
+
+
+$(document).ready(function()
+{ 
+	$("#send").click(function() {
+	  	send();
+		$(".wyslij").val('');
+	});
+
+	$("#rozlacz").click(function() {
+		log("Do widzenia!");
+		socket.close();
+		socket = null;
+	});
+
+	init();
+
+
+});
+
+</script>
+
+
+<div class="panel">
+    <header class="panelTop newsListHeader">
+        <div class="contentTop">
+            <h2 class="title newsListTitle">Czat serwisu</h2>
+        </div>
+    </header>
+    
+    <article class="panelMainShort contentNews">
+        <h3>Czat korzystający z protokołu WebSocket</h3>
+	<div class="chat">
+        	<ul id="log"></ul>
+	</div>
+        <label>Treść wiadomości: <input id="msg" type="text" class="wyslij" /></label>
+        <button id="send">Wyślij</button>
+        <button id="rozlacz">Rozłącz</button>
+    </article>
+    
+    <footer class="panelBottom"></footer>
+</div>

@@ -1,0 +1,78 @@
+<div class="panel">
+	<div class="panelTop">Komentarze</div>
+	<div class="panelMain">
+    
+    <!-- IF COMMENT_COUNTER -->
+    	<ul id="listComments">
+      	<!-- BEGIN comment -->
+    				<li id="comment{comment.ID}">
+              <span class="commentAuthor" title="{comment.USERAGENT}">
+                {comment.AVATAR}{comment.NAME}
+              </span>
+              <time datetime="{comment.TIME_SEO}" pubdate class="commentDate">{comment.TIME}</time>
+              {comment.U_REPORT}
+    					<p class="commentMessage">{comment.MESSAGE}</p>
+            </li>
+        <!-- END comment -->
+    	</ul>
+        
+        <!-- IF A_CAN_EDIT -->
+            <div class="center bgBlock">
+                <a href="{U_ACPLINK}">Zarządzaj komentarzami dla tego materiału</a>
+            </div>
+        <!-- ENDIF -->
+        
+        
+    <!-- ELSE -->
+        <div class="center noCommentsInfo">
+            Jeszcze nikt nie skomentował tego materiału.
+            <br />Możesz być pierwszy!
+        </div>
+        <ul id="listComments"></ul>
+    
+    <!-- ENDIF -->
+</div>
+<div class="panelBottom"></div>
+</div>
+
+
+
+
+<!-- IF COMMENT_FORM -->
+  <div class="panel">
+  	<div class="panelTop">Dodaj komentarz</div>
+  	<div class="panelMain">
+  		<!-- IF INFO_ERROR -->
+  			<!-- BEGIN error -->
+  				<h4 class="error center">{error.ERROR}</h4>
+  			<!-- END error -->
+  		<!-- ELSEIF INFO_OK -->
+  			<h4 class="success center">{INFO_OK}</h4>
+  		<!-- ENDIF -->
+  		<div class="center" id="commentReply"></div>
+  		<!-- IF not INFO_OK -->
+  		<form id="formComment" name="inputform" method="post" action="{FORM_ACTION}#commentReply">
+  		    <!-- IF not S_USER_LOGGED_IN -->
+  		        <input type="text" name="commentEmail" maxlength="50" class="textbox" style="width:250px;" required="true" value="<!-- IF COMMENT_AUTHOR -->{COMMENT_AUTHOR}<!-- ELSE -->Nick<!-- ENDIF -->" onfocus="if(this.value == 'Nick') { this.value=''; }" onblur="if(this.value == '') { this.value='Login'; }" />
+                <br /><input type="text" name="commentNick" maxlength="50" class="textbox" style="width:250px;" value="<!-- IF COMMENT_EMAIL -->{COMMENT_EMAIL}<!-- ELSE -->Email<!-- ENDIF -->" onfocus="if(this.value == 'Email') { this.value=''; }" onblur="if(this.value == '') { this.value='Email'; }" />
+  			<!-- ENDIF -->
+            <textarea id="commentMessage" name="commentMessage" rows="4" cols="20" class="textbox" required="true" style="width:100%">{COMMENT_MESSAGE}</textarea>
+            <input id="commentSubmit" type="submit" name="commentSubmit" value="Dodaj komentarz" class="button" style="float:right;" />
+            <input type="hidden" name="commentItemId" value="{COMMENT_ITEM_ID}" />
+            {S_FORM_TOKEN}
+  	    </form>
+      <!-- ENDIF -->
+  	</div>
+  	<div class="panelBottom"></div>
+  </div>
+<!-- ELSE -->
+  <div class="panel">
+  	<div class="panelTop">Dodaj komentarz</div>
+  	<div class="panelMain">
+      <div class="center">
+        Komentowanie zostało wyłączone.
+      </div>
+    </div>
+    <div class="panelBottom"></div>
+  </div>
+<!-- ENDIF -->

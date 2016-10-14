@@ -1,0 +1,434 @@
+/*******  CSS Reset *******/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+strong, b {
+    font-weight: bold;
+}
+ol, ul {
+	list-style: none;
+}
+ul li {
+    list-style-type: disc;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*******  HTML5 tags *******/
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+/*******  Main elements *******/
+body {
+    font-family: "Segoe UI","Ubuntu","Calibri",Arial,sans-serif,Verdana;
+	color: #555555;
+	background-color: #FFF;
+	background-image: url("//cdn.safegroup.pl/img/bg_top.png");
+	background-repeat: repeat-x;
+	font-size: 14px;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+/******* Header elements *******/
+body > header {
+    color: #BBB;
+    margin-bottom: 2px;
+    position: relative;
+    overflow: hidden;
+    clear: both;
+    width: 100%;
+    height: 130px;
+    font-size: 12px;
+    font-family: Arial,Sans-Serif;
+	/* font-family: Tahoma, Verdana, Trebuchet MS, Arial, Sans-Serif, Helvetica;*/
+}
+
+
+
+#topLogo {
+	margin: 15px auto 20px 20px;
+	font-weight: bold;
+    float: left;
+}
+#topLogo a {
+  color: #666666;
+  display: block;
+  font-family: 'Dosis';
+  font-size: 44px;
+  font-weight: normal;
+  height: 70px;
+  text-shadow: 2px 2px 5px #CCCCCC;
+  width: 380px;
+}
+
+
+
+
+body > nav {
+	background-color: #707070;
+	position: relative;
+	padding: 0 8px;
+	height: 32px;
+	top: 0;
+	z-index: 1;
+	overflow: hidden;
+    margin: 0 auto 20px auto;
+    border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 5px #666;
+	-moz-box-shadow: 0px 0px 5px #666;
+	box-shadow: 0px 0px 5px #666;
+}
+body > nav a:link,
+body > nav a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 11px;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+body > nav a:hover {
+	text-decoration: underline;
+}
+body > nav a:first-child {
+    background-image: url("/cdn/img/icon-home.png");
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	padding: 1px 0 0 20px;
+}
+.nav-header-links {
+	color: #FFFFFF;
+	display: block;
+	font-size: 11px;
+	padding: 7px 0;
+	float: left;
+	margin-left: 0;
+	margin-right: 5px;
+	text-align: left;
+}
+.unlink {
+	display: none;
+}
+
+
+/******* Top Bar elements *******/
+#topBar {
+    text-align: right;
+	background-color: #444;
+	height: 28px;
+	padding: 0 20px;
+    line-height: 28px;
+	-webkit-box-shadow: 0px 0px 5px #666;
+	-moz-box-shadow: 0px 0px 5px #666;
+	box-shadow: 0px 0px 5px #666;
+    clear: both;
+    overflow: hidden;
+}
+
+#topBar a:link,
+#topBar a:visited {
+    color: #BBB;
+}
+
+#topBar a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#topBar > ul {
+    float:left;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+#topBar > ul:last-child {
+    float: right;
+}
+
+#topBar > ul > li {
+    margin: 0;
+    padding: 0 8px;
+    display: inline-block; 
+}
+
+#topBar img {
+    margin-top: -4px;
+    vertical-align: top;
+    margin-right: 8px;
+}
+
+#quickLoginBox input {
+    background-color: #444;
+    background-image: none;
+    color: #FFF;
+    border: 1px solid #888;
+    font-size: 10px;
+    line-height: 10px;
+    height: 18px;
+    padding: 0 2px;
+    margin: 0 0 2px;
+    width: 70px;
+    vertical-align: middle;
+}
+
+#quickLoginBox input[type="submit"] {
+    height: 20px;
+}
+
+#quickLoginBox .radio {
+    width: 30px;
+    border: 0;
+}
+
+
+/******* Fixed width *******/
+body > nav,
+footer,
+#pageMain,
+#topMain {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    clear: both;
+    
+}
+
+
+/******* Main container elements *******/
+#pageMain {
+	background: url("/cdn/img/bg_right.png") repeat-y scroll center 0 #FFFFFF;
+	border: 1px solid #CCCCCC;
+	border-radius: 15px 15px 15px 15px;
+	margin: auto;
+	overflow: hidden;
+	top: 140px;
+}
+
+aside {
+	background-color: #F6F6F6;
+	float: right;
+	padding: 20px;
+	width: 257px;
+	min-height: 400px;
+}
+
+article {
+	float: left;
+	padding: 5px 15px 15px;
+	margin: 0 0 0 -1px;
+	text-align: justify;
+	width: 660px;
+}
+
+
+/******* Footer elements *******/
+footer {
+	border-top: 1px dotted;
+	clear: both;
+	color: #999999;
+	height: 50px;
+	margin: 35px auto auto;
+	padding-top: 10px;
+	text-align: center;
+}
+#copyright {
+	font-size: 12px;
+	padding-top: 15px;
+}
+
+
+/******* Content panels *******/
+.contentPanel, 
+body > nav {
+    background: rgb(125,126,125); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(125,126,125,1) 0%, rgba(68,68,68,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(125,126,125,1)), color-stop(100%,rgba(68,68,68,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(68,68,68,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(68,68,68,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(68,68,68,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(68,68,68,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#444444',GradientType=0 ); /* IE6-9 */
+}
+
+
+/******* Social icons *******/
+#socialIcons {
+	height: 20px;
+	list-style-type: none;
+	margin: auto;
+	padding: 0;
+	text-align: center;
+	width: 140px;
+	float: right;
+	margin-top: 4px;
+}
+#socialIcons > li {
+	display: inline;
+}
+#socialIcons > li > a {
+	float: left;
+	height: 22px;
+	margin: 1px 2px;
+	padding: 0;
+	width: 22px;
+	background: url("/cdn/img/social_icons.png") no-repeat scroll -25px 0 transparent;
+	opacity: 0.9;
+}
+#socialIcons > li > a:hover {
+	opacity: 1.0;
+}
+#socialIcons > li > .share_facebook {
+	background-position: 0 0;
+	width: 22px;
+	height: 22px;
+}
+#socialIcons > li > .share_google {
+	background-position: -23px 0;
+	width: 22px;
+	height: 22px;
+}
+#socialIcons > li > .share_rss {
+	background-position: -46px 0;
+	width: 22px;
+	height: 22px;
+}
+#socialIcons > li > .share_twitter {
+	background-position: -69px 0;
+	width: 22px;
+	height: 22px;
+}
+#socialIcons > li > .share_youtube {
+	background-position: -92px 0;
+	width: 22px;
+	height: 22px;
+}
+
+
+/* Positioning */
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+
+/* Elements */
+a:link, a:visited {
+  color: #105289;
+  text-decoration: none;
+}
+
+a:hover {
+    color: #D31141;
+    text-decoration: underline;
+}
+
+sup {
+    font-size: bold;
+    color: red;
+}
+
+
+/* Input, forms */
+input,
+textarea {
+    font-family: Verdana,Arial,Sans-Serif;
+}
+.button,
+input[type="submit"], 
+input[type="button"] {
+	background: url("/cdn/img/bg_button.gif") repeat scroll 0 0 transparent;
+	border: 1px solid #666666;
+	color: #000000;
+	cursor: pointer;
+	font-size: 12px;
+    padding: 2px 10px;
+}
+.button:hover, .button:focus,
+input[type="submit"]:hover, input[type="submit"]:focus,
+input[type="button"]:hover, input[type="button"]:focus {
+	color: #BC2A4D;
+	border-color: #BC2A4D;
+}
+.textbox,
+input[type="text"], 
+textarea {
+	color: #333333;
+	background-color: #FFFFFF;
+	border: 1px #B4BAC0 solid;
+	padding: 2px;
+	margin-top: 5px;
+}
+.textbox:hover, .textbox:focus,
+input[type="text"]:hover, input[type="text"]:focus,
+textarea:hover, textarea:focus {
+	color: #0F4987;
+	border: 1px #11A3EA solid;
+}
+
+
+
+#newLogo a:link,
+#newLogo a:visited {
+    font-family:'Varela', sans-serif;
+    font-size: 32px;
+    font-weight: normal;
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    color: #888;
+    line-height: 24px;
+    text-shadow: 0px 0px 6px silver;
+    max-width: 270px;
+    text-decoration: none;
+}
+
+#newLogo a:hover {
+    text-decoration: none;
+}
+
+
+#newLogo-small {
+    font-size: 16px;
+}
+
+#newLogo-left {
+    color: #FF8C51;
+}

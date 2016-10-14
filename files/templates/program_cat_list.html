@@ -1,0 +1,28 @@
+<div class="panel">
+  <div class="panelTop">
+		Kategorie programów
+	</div>
+  <div class="panelMain">
+		<div class="center">
+		  <h1 class="titles">Kategorie programów</h1>
+	    <span class="titles">Wszystkie kategorie programów opisanych w serwisie.</span>
+	  </div>
+	  <ul class="list">
+	  <!-- BEGIN cat -->
+      <li class="listElement">
+        <h2 class="listElementTitle"><a href="{cat.URL}" class="block" title="{cat.TITLE} - Zobacz programy">{cat.TITLE}</a></h2>
+        <span class="listElementDesc">
+        {cat.DESCRIPTION}
+					<!-- IF cat.HAS_SUBCATS -->
+          	<span class="listElementSubs">Podkategorie:</span>
+          	<!-- BEGIN subcat -->
+              <a href="{subcat.URL}" class="subElement" title="{subcat.TITLE} - Zobacz programy">{subcat.TITLE}</a>
+          	<!-- END subcat -->
+          <!-- ENDIF -->
+        </span>
+      </li>
+	  <!-- END cat -->
+	  </ul>
+  </div>
+  <div class="panelBottom"></div>
+</div>

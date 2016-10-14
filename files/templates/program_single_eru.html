@@ -1,0 +1,41 @@
+<div class="panel">
+    <header class="panelTop">
+        <h1 class="title">
+            <a href="CAT_URL">{CAT_TITLE}</a> &mdash;
+            <a href="{URL}" title="{TITLE}">{TITLE} {VERSION}</a>
+        </h1>
+    </header>
+    <article class="panelMainShort contentNews">
+        <div style="float:right;">
+            <strong>Producent:</strong> <a href="{COMPANY_URL}">{COMPANY_NAME}</a>
+            <br style="margin-bottom: 7px;" />
+            <strong>Data aktualizacji:</strong> {TIME}
+            <br style="margin-bottom: 7px;" />
+            <strong>Wersja:</strong> {VERSION}
+            <br style="margin-bottom: 7px;" />
+                <strong>Download</strong>
+                <br />
+                <select>
+                <!-- BEGIN files -->
+                    <option value="">{files.TITLE}</option>
+                <!-- END files -->
+                </select>
+                <br /><br />
+            <a href="{GALLERY_URL}">
+                <img src="{GALLERY_DIR}{SCREEN_THUMB2}" longdesc="{GALLERY_DIR}{SCREEN_FILENAME}" title="{SCREEN_TITLE}" style="width:350px;"  />
+            </a>
+        </div>
+        <div style="margin-right:372px; padding-right: 20px; border-right:1px dotted #888888;">
+        {CONTENT}
+        </div>
+    </article>
+    <footer class="panelBottom">
+        <span class="articleComments">
+            <!-- IF U_CAN_EDIT -->
+            (<a href="{EDITLINK}">Edytuj</a>)
+            <!-- ENDIF -->
+            <a href="{URL}#listComments" title="Skomentuj: {TITLE}"> Komentarze ({COMMENTS})</a>
+            &middot; {VIEWS} odsłon
+        </span>
+    </footer>
+</div>

@@ -1,0 +1,34 @@
+<div class="panel">
+  <div class="panelTop">Ankieta</div>
+  <div class="panelMain">
+	<!-- IF ALREADY_VOTED -->
+		<div class="center pollTitle">{POLL_TITLE}</div> <!-- font-weight:bold;margin-bottom:15px; -->
+		<!-- BEGIN option -->
+			<div>{option.TITLE}</div>
+		  <div><img src="images/theme/pollbar.gif" alt="{option.TITLE}" height="12" width="{option.PERCENT}" class="pollBar" /></div>
+		  <div>{option.PERCENT}% [{option.VOTES} <!-- IF option.VOTES == 1 -->głos<!-- ELSE -->głosów<!-- ENDIF -->]</div><br />
+		<!-- END option -->
+    <div class="center">
+      Głosów {POLL_VOTES}
+      <br />
+      Od: {POLL_START}
+    </div>
+    <!-- IF POLL_END -->
+    	<br /> do: {POLL_END}
+  	<!-- ENDIF -->
+	<!-- ELSE -->
+		<form id="formPoll" method="post" action="{FORM_ACTION}">
+      <fieldset>
+      	{POLL_TITLE}
+				<!-- BEGIN option -->
+					<br /><input type="radio" name="optionId" id="pollOption{option.ID}" value="{option.ID}" />
+		      <label for="pollOption{option.ID}" form="formPoll">{option.TITLE}</label>
+		    <!-- END option -->
+        <input type="hidden" name="pollId" value="{POLL_ID}" />
+        <div class="center"><input type="submit" name="pollVote" value="Głosuj" class="button" /></div>
+      </fieldset>
+    </form>
+	<!-- ENDIF -->
+  </div>
+  <div class="panelBottom"></div>
+</div>
